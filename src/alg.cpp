@@ -7,11 +7,11 @@ bool checkPrime(uint64_t value) {
   if (value == 2) { 
     return true;
   }
-  if (value < 2){
+  if (value < 2) {
       return false;
   }
-  for (uint64_t i = 2; i <= sqrt(value) + 1; i++){
-    if (value % i == 0){
+  for (uint64_t i = 2; i <= sqrt(value) + 1; i++) {
+    if (value % i == 0) {
       return false;
     }
   }
@@ -21,8 +21,8 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t a = 0;
   uint64_t k = 0;
-  while (k <= n){
-      if (checkPrime(k)){
+  while (k <= n) {
+      if (checkPrime(k)) {
         a++;
       }
     k++;
@@ -34,7 +34,7 @@ uint64_t nextPrime(uint64_t value) {
   uint64_t n = 1;
   value++;
   while (n == 1){
-      if (checkPrime(value)){
+      if (checkPrime(value)) {
         n++;
       }
       else {
@@ -47,8 +47,8 @@ uint64_t nextPrime(uint64_t value) {
 uint64_t sumPrime(uint64_t hbound) {
   uint64_t k = 0;
   uint64_t sum = 0;
-  while (k < hbound){
-      if (checkPrime(k)){
+  while (k < hbound) {
+      if (checkPrime(k)) {
           sum+=k;
       }
       k++;
@@ -58,8 +58,8 @@ uint64_t sumPrime(uint64_t hbound) {
 
 uint64_t twinPrimes(uint64_t lbound, uint64_t hbound) {
   uint64_t a;
-  for (uint64_t i = lbound; i < hbound; i++){
-      if (checkPrime(i) && checkPrime(i + 2)){
+  for (uint64_t i = lbound; i < hbound; i++) {
+      if (checkPrime(i) && checkPrime(i + 2)) {
         a++;
       }
     }
