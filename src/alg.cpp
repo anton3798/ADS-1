@@ -21,11 +21,15 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
   uint64_t a = 0;
   uint64_t k = 0;
-  while (k <= n) {
-      if (checkPrime(k)) {
-        a++;
-      }
-    k++;
+  uint64_t s = 0;
+  while (k == 0) {
+    a++;
+    if (checkPrime(a)) {
+      s++;
+    }
+    if (s == n) {
+      k++;
+    }
   }
   return a;
 }
